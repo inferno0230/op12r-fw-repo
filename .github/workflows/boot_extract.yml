@@ -29,7 +29,7 @@ jobs:
               run: wget -O otadump https://github.com/crazystylus/otadump/releases/download/0.1.2/otadump-0.1.2-x86_64-unknown-linux-gnu.tar.gz && tar xvf otadump && rm LICENSE README.md
             
             - name: Downloading OTA
-              run: wget -q --show-progress -O ota.zip "${{ github.event.inputs.fileurl }}"
+              run: wget -q --show-progress -O ota.zip -U 'Dalvik/2.1.0 (Linux; U; Android 15; CPH2585 Build/AQ3A.241114.001)' "${{ github.event.inputs.fileurl }}"
             
             - name: Extracting zip 
               run: unzip ota.zip 
