@@ -49,8 +49,8 @@ jobs:
                 ./otadump payload.bin --partitions abl,aop,aop_config,bluetooth,cpucp,devcfg,dsp,engineering_cdt,featenabler,hyp,imagefv,keymaster,modem,oplus_sec,oplusstanvbk,qupfw,shrm,splash,tz,uefi,uefisecapp,xbl,xbl_config,xbl_ramdump
                 mkdir firmware
                 cp -r extracted*/* firmware
-                wget -O firmware/install_images.bat https://gist.githubusercontent.com/inferno0230/128507cea45202db46176b616492bf77/raw/41b47f1d207ca7c53d6c21e7e4f38077dd7bbc3c/install_images.bat
-                wget -O firmware/install_images.sh https://gist.githubusercontent.com/inferno0230/a6e2a6a9abb0e9a5159c78a7936d8c72/raw/9e15305fbd8f249278981a76cc46072a317ae3ea/OP12R_firmware.sh
+                wget -O firmware/install_images.bat https://gist.githubusercontent.com/inferno0230/128507cea45202db46176b616492bf77/raw/17c85016e88891f39ee7f96b8c0a086701d972f1/install_images.bat
+                wget -O firmware/install_images.sh https://gist.githubusercontent.com/inferno0230/c688d146827e7ae4fa854b8c6816b106/raw/4303f3d1408277492b0fc39f15cfd6edc42666b0/install.sh
                 zip -r fastboot_firmware.zip firmware
                 rm -rf extracted*/
             
