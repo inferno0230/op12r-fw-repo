@@ -42,9 +42,10 @@ jobs:
             - name: Dumping boot and init_boot    
               run: | 
                 ./otadump payload.bin --partitions boot,init_boot
-                cp extracted*/boot.img extracted*/init_boot.img $GITHUB_WORKSPACE
+                cp extracted*/boot.img extracted*/init_boot.img extracted*/recovery.img $GITHUB_WORKSPACE
                 sha1sum boot.img > boot.img.sha1sum
                 sha1sum init_boot.img > init_boot.img.sha1sum
+                sha1sum recovery.img > recovery.img.sha1sum
                 rm -rf extracted*/
                 ./otadump payload.bin --partitions abl,aop,aop_config,bluetooth,cpucp,devcfg,dsp,engineering_cdt,featenabler,hyp,imagefv,keymaster,modem,oplus_sec,oplusstanvbk,qupfw,shrm,splash,tz,uefi,uefisecapp,xbl,xbl_config,xbl_ramdump
                 mkdir firmware
@@ -56,4 +57,4 @@ jobs:
             
             - name: Creating release
               run: |
-                gh release create $REL_NAME --title $(echo $REL_NAME) --notes "" boot.img init_boot.img boot.img.sha1sum init_boot.img.sha1sum fastboot_firmware.zip
+                gh release create $REL_NAME --title $(echo $REL_NAME) --notes "" boot.img init_boot.img recovery.img boot.img.sha1sum init_boot.img.sha1sum recovery.img.sha1sum fastboot_firmware.zip
