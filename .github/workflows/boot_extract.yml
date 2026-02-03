@@ -22,7 +22,7 @@ jobs:
             
             - name: Set up Environment
               run: |
-                sudo apt-get update && sudo apt upgrade -y
+                sudo apt-get update -y
                 sudo apt-get install -y aria2
             
             - name: Downloading otadump    
